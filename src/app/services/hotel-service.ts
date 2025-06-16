@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl = 'http://localhost:3000/api/hotels';
+  private apiUrl = 'https://gestion-hotel-api.vercel.app';
 
   constructor(private http: HttpClient) { }
 
