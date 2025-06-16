@@ -1,6 +1,3 @@
 [build]
   command = "ng build"
   publish = "dist/gestion-hotel"
-
-[plugins]
-  # package = "@netlify/angular-runtime"
