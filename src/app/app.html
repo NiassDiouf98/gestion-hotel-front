@@ -1,7 +1,10 @@
 <div class="global-bg"></div>
 <div *ngIf="initialized">
   <div class="layout">
-    <app-sidebar *ngIf="showHeaderAndHeader"></app-sidebar>
+    <button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
+    <div class="layout" [ngClass]="{ 'sidebar-open': isSidebarOpen }"></div>
+    <app-sidebar *ngIf="showHeaderAndHeader" [isOpen]="isSidebarOpen" (menuClicked)="toggleSidebar()"></app-sidebar>
+    <div class="overlay" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
     <div class="main-content">
       <app-navbar *ngIf="showHeaderAndHeader"></app-navbar>
       <main>

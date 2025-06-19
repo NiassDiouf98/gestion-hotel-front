@@ -4,6 +4,7 @@
   min-height: calc(100vh - 80px);
   background: #f3f3f3;
   animation: fadeIn 0.5s cubic-bezier(.4,0,.2,1);
+  margin-left: 300px;
 }
 
 .alert-container {
@@ -97,7 +98,7 @@
 .hotels-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px 24px;
+  gap: 8px 24px;
 }
 
 .hotel-card {
@@ -109,6 +110,7 @@
   flex-direction: column;
   min-width: 0;
   transition: box-shadow 0.3s, transform 0.3s;
+  margin-bottom: 20px;
 }
 
 .hotel-card:hover {
@@ -174,5 +176,10 @@
     width: 100%;
     margin-left: 0;
     padding: 18px 8px 2px 8px;
+  }
+}
+@media (max-width: 768px) {
+  .list-hotel-content {
+    margin-left: 0;
   }
 }

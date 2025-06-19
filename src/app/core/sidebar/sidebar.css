@@ -10,8 +10,10 @@
   justify-content: space-between;
   padding: 24px 0 45px 0;
   box-shadow: 2px 0 8px #0002;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
 }
 
 .sidebar::before {
@@ -49,7 +51,6 @@
 
 .sidebar-nav {
   flex: 1;
-  /* padding-left: 32px; */
 }
 
 .sidebar-section {
@@ -67,7 +68,6 @@
 
 .sidebar-nav li {
   margin: 0;
-  /* margin-bottom: 8px; */
   width: 100%;
 }
 
@@ -142,3 +142,14 @@
   background: #4caf50;
 }
 
+/* Masquer la sidebar sur petits écrans */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}

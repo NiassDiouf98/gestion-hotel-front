@@ -5,6 +5,7 @@
   background: #fff;
   padding: 18px 32px;
   box-shadow: 0 2px 8px #0001;
+  margin-left: 300px;
 }
 
 .navbar-title {
@@ -100,4 +101,11 @@
 
 .navbar-logout:hover {
   color: #ff5252;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    margin-left: 0;
+    justify-content: center;
+  }
 }

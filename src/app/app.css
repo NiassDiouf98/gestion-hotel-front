@@ -15,7 +15,6 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  /* background: #f3f3f3; */
 }
 
 app-navbar {
@@ -29,4 +28,47 @@ main {
   min-width: 0;
   padding: 0;
   /* background: #f3f3f3; */
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 15px;
+  z-index: 999;
+  background: #393e41;
+  color: white;
+  border: none;
+  font-size: 1.6rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+
+/* Afficher le bouton sur mobile */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .layout.sidebar-open .main-content {
+    transform: translateX(300px);
+    transition: transform 0.3s ease;
+  }
 }

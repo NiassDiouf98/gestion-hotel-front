@@ -23,26 +23,36 @@
     <div class="modal-row">
       <div class="modal-group">
         <label for="hotelEmail">E-mail</label>
-        <input type="email" id="hotelEmail" [(ngModel)]="hotel.email" name="email" placeholder="information@gmail.com" required email #email="ngModel" />
+        <input type="email" id="hotelEmail" [(ngModel)]="hotel.email" name="email" placeholder="information@gmail.com" required email pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" />
         <div class="input-error" *ngIf="email.invalid && email.touched">Email invalide.</div>
       </div>
       <div class="modal-group">
         <label for="hotelPhone">Numéro de téléphone</label>
-        <input type="text" id="hotelPhone" [(ngModel)]="hotel.phone" name="phone" placeholder="+221 77 777 77 77" required />
+        <input type="text" id="hotelPhone" [(ngModel)]="hotel.phone" name="phone" placeholder="+221 77 777 77 77" required pattern="^\+?[0-9\s]{9,16}$" #phone="ngModel" />
+        <div class="input-error" *ngIf="phone.invalid && phone.touched">
+          *Numéro invalide ou manquant.
+        </div>
       </div>
     </div>
     <div class="modal-row">
       <div class="modal-group">
         <label for="hotelPrice">Prix par nuit</label>
-        <input type="number" id="hotelPrice" [(ngModel)]="hotel.price" name="price" placeholder="25000" min="0" required />
+        <input type="number" id="hotelPrice" [(ngModel)]="hotel.price" name="price" placeholder="25000" min="0" required #price="ngModel" />
+        <div class="input-error" *ngIf="price.invalid && price.touched">
+          *Prix invalide.
+        </div>
       </div>
       <div class="modal-group">
         <label for="hotelCurrency">Devise</label>
-        <select id="hotelCurrency" [(ngModel)]="hotel.devise" name="devise" required>
+        <select id="hotelCurrency" [(ngModel)]="hotel.devise" name="devise" required #devise="ngModel">
+          <option value="" disabled selected hidden>Choisir une devise</option>
           <option value="XOF">F XOF</option>
           <option value="EUR">€ EUR</option>
           <option value="USD">$ USD</option>
         </select>
+        <div class="input-error" *ngIf="devise.invalid && devise.touched">
+          *Devise requise.
+        </div>
       </div>
     </div>
     <div class="modal-group modal-photo">

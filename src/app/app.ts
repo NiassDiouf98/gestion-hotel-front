@@ -16,6 +16,7 @@ export class App {
   showHeaderAndHeader = false;
   initialized = false;
   hiddenRoutes = ['/login', '/register', '/forgot-password'];
+   isSidebarOpen = false;
 
   constructor(private router: Router) {
     // Initialise la valeur dès le départ
@@ -29,5 +30,9 @@ export class App {
         this.showHeaderAndHeader = !this.hiddenRoutes.includes(event.urlAfterRedirects);
         this.initialized = true;
       });
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }

@@ -4,6 +4,7 @@
   min-height: calc(100vh - 80px);
   background: #f3f3f3;
   animation: fadeIn 0.35s cubic-bezier(.4,0,.2,1);
+  margin-left: 300px;
 }
 
 .dashboard-header {
@@ -52,5 +53,10 @@
   }
   .dashboard-content {
     padding: 18px 8px 0 8px;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
   }
 }
