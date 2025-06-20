@@ -12,7 +12,7 @@
   </div>
   <div class="hotels-grid">
     <div class="hotel-card" *ngFor="let hotel of hotels">
-      <img [src]="getImageUrl(hotel.image)" [alt]="hotel.name" class="hotel-img" />
+      <img [src]="getImageUrl(hotel.image)" loading="lazy" [alt]="hotel.name" class="hotel-img" />
       <div class="hotel-info">
         <div class="hotel-address">{{ hotel.address }}</div>
         <div class="hotel-name">{{ hotel.name }}</div>
